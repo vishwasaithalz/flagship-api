@@ -1,0 +1,14 @@
+{
+  "name": "flagship-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A tested, dependency-free Node.js API foundation",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  }
+}
