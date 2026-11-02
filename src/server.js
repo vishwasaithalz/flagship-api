@@ -37,7 +37,7 @@ async function readJsonBody(req) {
   return JSON.parse(raw);
 }
 
-async function handleRequest(req, res) {
+export async function handleRequest(req, res) {
   const pathname = new URL(req.url ?? "/", "http://localhost").pathname;
 
   if (req.method === "GET" && pathname === "/health") {
