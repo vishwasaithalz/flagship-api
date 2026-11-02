@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/health",
+      "destination": "/api/index?route=health"
+    },
+    {
+      "source": "/api/v1/status",
+      "destination": "/api/index?route=status"
+    },
+    {
+      "source": "/api/v1/validate",
+      "destination": "/api/index?route=validate"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ]
+}
