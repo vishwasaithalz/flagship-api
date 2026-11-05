@@ -4,6 +4,7 @@ const routes = {
   health: "/health",
   status: "/api/v1/status",
   validate: "/api/v1/validate",
+  openapi: "/openapi.json",
 };
 
 export default async function handler(req, res) {
