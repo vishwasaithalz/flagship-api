@@ -9,7 +9,7 @@
 
 <p align="center"><strong>A small Node.js API foundation focused on clear contracts and predictable behaviour.</strong></p>
 
-<p align="center">[Endpoints](#-endpoints) · [Run locally](#-run-locally) · [Tests](#-tests) · [Security](#-security-boundaries)</p>
+<p align="center"><a href="#-endpoints">Endpoints</a> · <a href="#-run-locally">Run locally</a> · <a href="#-tests">Tests</a> · <a href="#-security-boundaries">Security</a></p>
 
 ## 🚢 What it includes
 
