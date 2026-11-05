@@ -95,3 +95,8 @@ Keep changes small and test endpoint success, invalid input, malformed JSON, and
 
 </div>
 <!-- KARMA VISUAL IDENTITY: END -->
+
+
+<!-- KARMA ANIMATED SIGNAL -->
+<p align="center"><img src="assets/karma-signal.svg" alt="flagship-api animated signal graphic" width="100%" /></p>
+<details><summary><strong>🎛 Explore the interactive KARMA universe</strong></summary><p><a href="https://karma-ops-monitor.vercel.app">Launch the music-enabled KARMA homepage</a>. Sound is user-controlled. Motion can be reduced.</p></details>
