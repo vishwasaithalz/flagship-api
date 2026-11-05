@@ -10,6 +10,10 @@
       "destination": "/api/index?route=status"
     },
     {
+      "source": "/openapi.json",
+      "destination": "/api/index?route=openapi"
+    },
+    {
       "source": "/api/v1/validate",
       "destination": "/api/index?route=validate"
     }
