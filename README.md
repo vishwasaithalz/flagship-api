@@ -26,7 +26,7 @@
 | Method | Route | Purpose |
 |---|---|---|
 | GET | `/health` | Liveness check |
-| GET | `/api/v1/status` | Service metadata |
+| GET | `/api/v1/status` | Service metadata |\n| GET | `/openapi.json` | Machine-readable OpenAPI 3.1 contract |
 | POST | `/api/v1/validate` | Validate a small JSON payload |
 
 The validation route accepts an object with a required `name` string (1 to 80 characters) and an optional `role` string (up to 80 characters).
