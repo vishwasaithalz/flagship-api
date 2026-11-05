@@ -44,6 +44,18 @@ export async function handleRequest(req, res) {
     return sendJson(res, 200, { status: "ok" });
   }
 
+  if (req.method === "GET" && pathname === "/openapi.json") {
+    return sendJson(res, 200, {
+      openapi: "3.1.0",
+      info: { title: "Flagship API", version: "0.1.0", description: "Learning API contract. Not a production security certification." },
+      paths: {
+        "/health": { get: { summary: "Liveness check", responses: { "200": { description: "Service is alive" } } } },
+        "/api/v1/status": { get: { summary: "Service metadata", responses: { "200": { description: "Service status" } } } },
+        "/api/v1/validate": { post: { summary: "Validate a small JSON object", requestBody: { required: true, content: { "application/json": { schema: { type: "object", required: ["name"], properties: { name: { type: "string", minLength: 1, maxLength: 80 }, role: { type: "string", maxLength: 80 } } } } } }, responses: { "200": { description: "Valid payload" }, "400": { description: "Invalid payload" }, "413": { description: "Payload exceeds 16 KB" }, "415": { description: "Unsupported media type" } } } }
+      }
+    });
+  }
+
   if (req.method === "GET" && pathname === "/api/v1/status") {
     return sendJson(res, 200, {
       service: "flagship-api",
@@ -88,7 +100,7 @@ export async function handleRequest(req, res) {
     });
   }
 
-  if (pathname === "/health" || pathname === "/api/v1/status" || pathname === "/api/v1/validate") {
+  if (pathname === "/health" || pathname === "/api/v1/status" || pathname === "/api/v1/validate" || pathname === "/openapi.json") {
     res.setHeader("Allow", pathname === "/api/v1/validate" ? "POST" : "GET");
     return sendJson(res, 405, {
       error: { code: "METHOD_NOT_ALLOWED", message: "The HTTP method is not supported for this route." },
